@@ -5,9 +5,9 @@ services:
     image: postgres
     restart: unless-stopped
     environment:
-      - POSTGRES_DB=Tech_forum
-      - POSTGRES_USER=dream99
-      - POSTGRES_PASSWORD=dream99
+      - POSTGRES_DB=
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
     volumes:
       - ./database:/app/backend
     ports:
