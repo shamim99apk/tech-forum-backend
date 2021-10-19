@@ -1,0 +1,26 @@
+version: "3"
+services:
+
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=Tech_forum
+      - POSTGRES_USER=dream99
+      - POSTGRES_PASSWORD=dream99
+    volumes:
+      - ./database:/app/backend
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    command: npm start
+    volumes:
+      - .:/app/backend
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+
+
